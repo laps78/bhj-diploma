@@ -3,5 +3,6 @@
  * на сервер.
  * */
 const createRequest = (options = {}) => {
-
+  console.log(options);
 };
+ 

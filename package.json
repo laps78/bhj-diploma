@@ -1,13 +1,13 @@
 {
   "name": "bhj-diploma",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Описание",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "LAPS",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.5",
@@ -24,5 +24,13 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laps78/bhj-diploma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/laps78/bhj-diploma/issues"
+  },
+  "homepage": "https://github.com/laps78/bhj-diploma#readme"
 }
