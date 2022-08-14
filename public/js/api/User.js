@@ -43,13 +43,15 @@ class User {
    * User.setCurrent.
    * */
   static login(data, callback) {
+    console.log(this);
     createRequest({
-      url: this.URL + '/login',
+      url: '/login',
       method: 'POST',
       responseType: 'json',
       data,
       callback: (err, response) => {
         if (response && response.user) {
+          console.log(response);
           this.setCurrent(response.user);
         }
         callback(err, response);

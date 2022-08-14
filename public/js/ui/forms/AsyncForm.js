@@ -53,8 +53,7 @@ class AsyncForm {
   }
  
   onSubmit(options) {
-    console.log(`onSubmit() started...`);
-    console.log(options);
+    
   }
 
   /**
@@ -63,7 +62,7 @@ class AsyncForm {
    * */
   submit() {
     const data = this.getData();
-    
+    console.log(`AsyncForm.js: data`);
     console.log(data);
 
     this.onSubmit(data);

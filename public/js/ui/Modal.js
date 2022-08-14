@@ -38,6 +38,8 @@ class Modal {
    * Закрывает текущее окно (Modal.close())
    * */
   onClose(e) {
+    console.log(`modal closing...`);
+    console.log(this);
     this.close();
   }
   /**
