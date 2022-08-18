@@ -11,6 +11,6 @@ class RegisterForm extends AsyncForm {
    * */
   onSubmit(data) {
     User.register(data);
-    Modal.onClose();
+    this.element.closest('.modal').style = '';
   }
 }

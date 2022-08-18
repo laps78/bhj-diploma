@@ -43,6 +43,7 @@ class User {
    * User.setCurrent.
    * */
   static login(data, callback) {
+    console.log(`User.js:`);
     console.log(this);
     createRequest({
       url: '/login',

@@ -13,7 +13,7 @@ class Modal {
    * */
   constructor(element) {
     if (!element) {
-      throw new Error(`Modal.js: ${element} doesn't exist!`);
+      throw new Error(`Modal.js: element is ${element}!`);
     }
     this.element = element;
     this.registerEvents();
@@ -53,6 +53,6 @@ class Modal {
    * Закрывает окно: удаляет CSS-свойство display
    * */
   close() {
-    this.element.style.display = 'none';
+    this.element.style = '';
   }
 }

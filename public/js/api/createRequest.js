@@ -8,18 +8,17 @@ const createRequest = (options = {}) => {
   
   const method = options.method;
   console.log(options.method);
+  //make GET request
   let requestUrl = '';
   if (method === 'GET') {
     console.log(`method get`);
     requestUrl = options.url + '?mail=' + options.data.email + '&password=' + options.data.password;
     console.log(requestUrl);
+  } else {
+    //create FormData
+    const formData = new FormData();
   }
-  if (method === 'POST') {
-    console.log(`method post`);
-    requestUrl = options.url;
-    console.log(requestUrl);
-  }
-
+ 
   const xhr = new XMLHttpRequest();
 
   xhr.open(method, requestUrl);

@@ -46,9 +46,6 @@ class AsyncForm {
       field.value = '';
     });
 
-    //console.log(`data:`);
-    //console.log(data);
-
     return data;
   }
  
@@ -62,9 +59,6 @@ class AsyncForm {
    * */
   submit() {
     const data = this.getData();
-    console.log(`AsyncForm.js: data`);
-    console.log(data);
-
     this.onSubmit(data);
   }
 }
