@@ -43,7 +43,7 @@ class User {
    * User.setCurrent.
    * */
   static login(data, callback) {
-    console.log(`User.js:`);
+    console.log(`login User.js:`);
     console.log(this);
     createRequest({
       url: '/login',
@@ -67,7 +67,21 @@ class User {
    * User.setCurrent.
    * */
   static register(data, callback) {
-
+    console.log(`register User.js:`);
+    console.log(this);
+    createRequest({
+      url: '/login',
+      method: 'POST',
+      responseType: 'json',
+      data,
+      callback: (err, response) => {
+        if (response && response.user) {
+          console.log(response);
+          this.setCurrent(response.user);
+        }
+        callback(err, response);
+      }
+    });
   }
 
   /**

@@ -2,28 +2,28 @@
  * Основная функция для совершения запросов
  * на сервер.
  * */
-const createRequest = (options = {}) => {
-  console.log(`createRequest.js: options`);
-  console.log(options);
-  
+const createRequest = (options = {}) => {  
   const method = options.method;
-  console.log(options.method);
-  //make GET request
+  const formData = new FormData;
   let requestUrl = '';
+  
   if (method === 'GET') {
-    console.log(`method get`);
-    requestUrl = options.url + '?mail=' + options.data.email + '&password=' + options.data.password;
-    console.log(requestUrl);
+    for (let key in options.data) {
+      requestUrl = options.url + '?' + key + '=' + options.data[key] + '&';
+    }
   } else {
-    //create FormData
-    const formData = new FormData();
+    for (let key in options.data) {
+      formData.append(key, options.data[key]);
+    };
   }
- 
+
   const xhr = new XMLHttpRequest();
-
-  xhr.open(method, requestUrl);
+  xhr.open(method, options.url + requestUrl);
   xhr.responseType = 'json';
-  xhr.send();
-
+  if (formData.length !== 0) {
+    xhr.send(formData);
+  } else {
+    xhr.send();
+  };  
 };
  
