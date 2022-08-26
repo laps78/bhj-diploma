@@ -18,7 +18,6 @@ class RegisterForm extends AsyncForm {
         console.log(response);
       }
     });
-    
-    this.element.closest('.modal').style = '';
+    App.getModal('register').onClose();
   }
 }

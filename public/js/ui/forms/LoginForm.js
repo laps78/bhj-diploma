@@ -18,7 +18,6 @@ class LoginForm extends AsyncForm {
         console.log(response);
       }
     });
-    
-    this.element.closest('.modal').style = '';
+    App.getModal('login').onClose();
   }
 }

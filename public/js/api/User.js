@@ -4,12 +4,15 @@
  * Имеет свойство URL, равное '/user'.
  * */
 class User {
+  constructor() {
+    this.URL = '/user';
+  }
   /**
    * Устанавливает текущего пользователя в
    * локальном хранилище.
    * */
   static setCurrent(user) {
-
+    localStorage.setItem('user', user);
   }
 
   /**
@@ -17,7 +20,7 @@ class User {
    * пользователе из локального хранилища.
    * */
   static unsetCurrent() {
-
+    localStorage.removeItem('user');
   }
 
   /**
@@ -45,14 +48,16 @@ class User {
   static login(data, callback) {
     console.log(`login User.js:`);
     console.log(this);
+
+    this.URL = '/user';
+
     createRequest({
-      url: '/login',
+      url: this.URL + '/login',
       method: 'POST',
       responseType: 'json',
       data,
       callback: (err, response) => {
         if (response && response.user) {
-          console.log(response);
           this.setCurrent(response.user);
         }
         callback(err, response);
@@ -69,14 +74,14 @@ class User {
   static register(data, callback) {
     console.log(`register User.js:`);
     console.log(this);
+    this.URL = '/user';
     createRequest({
-      url: '/login',
+      url: this.URL + '/register',
       method: 'POST',
       responseType: 'json',
       data,
       callback: (err, response) => {
         if (response && response.user) {
-          console.log(response);
           this.setCurrent(response.user);
         }
         callback(err, response);
